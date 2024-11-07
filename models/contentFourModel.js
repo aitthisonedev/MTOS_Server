@@ -25,6 +25,10 @@ const ContentFour = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    video_link: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     image: {
       type: DataTypes.STRING,
       allowNull: true,

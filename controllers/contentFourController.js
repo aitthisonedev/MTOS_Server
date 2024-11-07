@@ -25,7 +25,7 @@ exports.createContentFour = (folder) => {
     imageUpload.single('image'),
     async (req, res) => {
       try {
-        const { title_en, title_lo, description_en, description_lo } = req.body;
+        const { title_en, title_lo, description_en, description_lo, video_link } = req.body;
 
         if (!title_en || !title_lo || !description_en || !description_lo) {
           return res.status(400).json({ error: "All fields are required" });
@@ -38,6 +38,7 @@ exports.createContentFour = (folder) => {
           title_lo,
           description_en,
           description_lo,
+          video_link,
           image,
         });
 
@@ -60,7 +61,7 @@ exports.updateContentFour = (folder) => {
     async (req, res) => {
       try {
         const { id } = req.params;
-        const { title_en, title_lo, description_en, description_lo } = req.body;
+        const { title_en, title_lo, description_en, description_lo, video_link } = req.body;
 
         const existingContent = await ContentFour.findByPk(id);
 
@@ -73,6 +74,7 @@ exports.updateContentFour = (folder) => {
           title_lo: title_lo || existingContent.title_lo,
           description_en: description_en || existingContent.description_en,
           description_lo: description_lo || existingContent.description_lo,
+          video_link: video_link || existingContent.video_link,
         };
 
         if (req.file) {
