@@ -2,51 +2,99 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../configs/database");
 
 const ServiceDescription = sequelize.define("ServiceDescription", {
-  construction_en: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-  construction_lo: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-  import_export_en: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-  import_export_lo: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-  gas_lpg_title_en: {
+  mtosNameEn: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  gas_lpg_title_lo: {
+  mtosNameLo: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  gas_lpg_desc_en: {
+  mtosDescriptionEn: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  gas_lpg_desc_lo: {
+  mtosDescriptionLo: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  crushing_plant_en: {
+  mmcbrNameEn: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  mmcbrNameLo: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  mmcbrDescriptionEn: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  crushing_plant_lo: {
+  mmcbrDescriptionLo: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  apartment_en: {
+  liengNameEn: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  liengNameLo: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  liengDescriptionEn: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  apartment_lo: {
+  liengDescriptionLo: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  orderServicesNameEn: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  orderServicesNameLo: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  orderServicesDescriptionEn: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  orderServicesDescriptionLo: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  gotenNameEn: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  gotenNameLo: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  gotenDescriptionEn: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  gotenDescriptionLo: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  sandFactoryNameEn: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  sandFactoryNameLo: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  sandFactoryDescriptionEn: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  sandFactoryDescriptionLo: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
@@ -55,4 +103,5 @@ const ServiceDescription = sequelize.define("ServiceDescription", {
   timestamps: true,
 });
 
+// ServiceDescription.sync({ force: true });
 module.exports = ServiceDescription;

@@ -1,11 +1,8 @@
-// Import dotenv to load environment variables
-require('dotenv').config();
-
 const { DataTypes } = require("sequelize");
 const sequelize = require("../configs/database");
 
-const CrushingPlant = sequelize.define(
-  "CrushingPlant",
+const ContentTwo = sequelize.define(
+  "ContentTwo",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,12 +13,12 @@ const CrushingPlant = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description_en: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
     title_lo: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description_en: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     description_lo: {
@@ -34,9 +31,9 @@ const CrushingPlant = sequelize.define(
     },
   },
   {
-    tableName: `${process.env.TB_PREFIX || ''}crushing_plant`,
+    tableName: `${process.env.TB_PREFIX || ''}content_two`,
     timestamps: true,
   }
 );
 
-module.exports = CrushingPlant;
+module.exports = ContentTwo; 

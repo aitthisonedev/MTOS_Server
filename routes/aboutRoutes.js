@@ -1,9 +1,11 @@
 const express = require('express');
-const router = express.Router();
 const aboutController = require('../controllers/aboutController');
+const router = express.Router();
 
-router.get('/', aboutController.getAbout);
-router.post('/', aboutController.createAbout);
-router.put('/:id', aboutController.updateAbout);
+router.get('/', aboutController.getAllAbouts);
+router.get('/:id', aboutController.getAboutById);
+router.post('/', aboutController.createAbout('ImageUpload'));
+router.put('/:id', aboutController.updateAbout('ImageUpload'));
+router.delete('/:id', aboutController.deleteAbout);
 
 module.exports = router;

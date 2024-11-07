@@ -1,25 +1,27 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../configs/database");
-require("dotenv").config(); // Load environment variables
 
-// Gallery Model
-const Gallery = sequelize.define(
-  "Gallery",
+const SlidePerformance = sequelize.define(
+  "SlidePerformance",
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    src: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
-    tableName: `${process.env.TB_PREFIX}gallery`,
+    tableName: `${process.env.TB_PREFIX || ''}slide_performance`,
     timestamps: true,
   }
 );
 
-module.exports = Gallery;
+module.exports = SlidePerformance; 

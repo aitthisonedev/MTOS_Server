@@ -1,51 +1,39 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../configs/database");
 
-const About = sequelize.define(
-  "About",
+const ContentFour = sequelize.define(
+  "ContentFour",
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    titleOne_en: {
+    title_en: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    titleOne_lo: {
+    title_lo: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    descriptionOne_en: {
+    description_en: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    descriptionOne_lo: {
+    description_lo: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    descriptionTwo_en: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    descriptionTwo_lo: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    imageOne: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    imageTwo: {
+    image: {
       type: DataTypes.STRING,
       allowNull: true,
     },
   },
   {
-    tableName: `${process.env.TB_PREFIX || ''}about`,
+    tableName: `${process.env.TB_PREFIX || ''}content_four`,
     timestamps: true,
   }
 );
 
-module.exports = About;
+module.exports = ContentFour; 

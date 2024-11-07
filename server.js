@@ -18,19 +18,24 @@ const projectImageRoutes = require("./routes/projectImageRoutes");
 const imageUploadRoutes = require("./routes/imageUploadRoutes");
 const emailUpdateRoutes = require("./routes/EmailUpdateRoutes");
 const aboutRoutes = require("./routes/aboutRoutes");
-const branersRoutes = require("./routes/BranersRoutes");
 const phoneUpdatesRoutes = require("./routes/PhoneUpdateRoutes");
 const socialMediaRoutes = require("./routes/SocialLinkRoutes");
 const otherContentRoutes = require("./routes/OtherRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const PartnerRoutes = require("./routes/LogopartnersRoutes");
 const teamRoutes = require("./routes/teamRoutes");
-const testimonialsRoutes = require("./routes/testimonialRoutes");
 const slideRouter = require("./routes/SlideRouter");
-const galleryRoutes = require("./routes/GalleryRouter");
-const crushingPlantRouter = require("./routes/crushingPlantRouter");
 const serviceDescriptionsRoutes = require("./routes/serviceDescriptionsRoutes");
 const groupCompanyRoutes = require("./routes/GroupCompanyRouter");
+const headContentRoutes = require('./routes/headContentRoutes');
+const contentRoutes = require('./routes/contentRoutes');
+const prosesRoutes = require('./routes/prosesRoutes');
+const performanceRoutes = require('./routes/performanceRoutes');
+const contentOneRoutes = require('./routes/contentOneRoutes');
+const contentTwoRoutes = require('./routes/contentTwoRoutes');
+const contentThreeRoutes = require('./routes/contentThreeRoutes');
+const contentFourRoutes = require('./routes/contentFourRoutes');
+const slidePerformanceRoutes = require('./routes/slidePerformanceRoutes');
 
 /*------- Express App Setup -------*/
 const app = express();
@@ -42,6 +47,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Update the static file serving
 app.use('/ImageUpload', express.static(path.join(__dirname, 'ImageUpload')));
 
 // Serve static files
@@ -63,20 +69,24 @@ app.use("/api/project-images", projectImageRoutes);
 app.use("/api/imageUpload", imageUploadRoutes);
 app.use("/api/email-updates", emailUpdateRoutes);
 app.use("/api/about", aboutRoutes);
-app.use("/api/braners", branersRoutes);
 app.use("/api/logoPartners", PartnerRoutes);
 app.use("/api/phone-updates", phoneUpdatesRoutes);
 app.use("/api/social-links", socialMediaRoutes);
 app.use("/api/other-contents", otherContentRoutes);
 app.use("/api/team", teamRoutes);
-app.use("/api/testimonials", testimonialsRoutes);
 app.use("/api", commentRoutes);
 app.use("/api/sliders", slideRouter);
-app.use("/api/gallery", galleryRoutes);
-app.use("/api/crushing-plants", crushingPlantRouter);
 app.use("/api/service-descriptions", serviceDescriptionsRoutes);
 app.use("/api/groupComPanies", groupCompanyRoutes);
-
+app.use('/api/head-contents', headContentRoutes);
+app.use('/api/contents', contentRoutes);
+app.use('/api/proses', prosesRoutes);
+app.use('/api/performances', performanceRoutes);
+app.use('/api/content-ones', contentOneRoutes);
+app.use('/api/content-twos', contentTwoRoutes);
+app.use('/api/content-threes', contentThreeRoutes);
+app.use('/api/content-fours', contentFourRoutes);
+app.use('/api/slide-performances', slidePerformanceRoutes);
 
 /*------- Database Connection and Sync -------*/
 sequelize

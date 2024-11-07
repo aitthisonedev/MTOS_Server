@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../configs/database");
 
-const About = sequelize.define(
-  "About",
+const HeadContent = sequelize.define(
+  "HeadContent",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -25,27 +25,15 @@ const About = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    descriptionTwo_en: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    descriptionTwo_lo: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    imageOne: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    imageTwo: {
+    image: {
       type: DataTypes.STRING,
       allowNull: true,
     },
   },
   {
-    tableName: `${process.env.TB_PREFIX || ''}about`,
+    tableName: `${process.env.TB_PREFIX || ''}head_content`,
     timestamps: true,
   }
 );
 
-module.exports = About;
+module.exports = HeadContent; 
